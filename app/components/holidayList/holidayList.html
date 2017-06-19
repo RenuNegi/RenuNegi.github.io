@@ -1,0 +1,27 @@
+<div ng-cloak layout-gt-sm="row" layout-align="center center" layout="row">
+  <div flex-gt-sm="50" flex ">
+    <md-toolbar layout="row " class="md-hue-3 margin-bottom-20">
+      <div class="md-toolbar-tools" layout-align="center center">
+        <span>{{country}} Holidays in {{year}}</span>
+      </div>
+    </md-toolbar>
+    <md-content ng-repeat="data in holidayDataList ">
+      <md-list flex>     
+        <md-list-item  class="md-3-line margin-bottom-20"  ng-repeat="newData in data ">
+          <div class="md-list-item-text " layout="column ">
+            <md-card md-colors="::{backgroundColor: 'default-primary-700'} " ui-sref="holidayDetail({name : newData.name,
+                 date: newData.date}) " style="cursor:pointer; ">
+            <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline ">{{ newData.name }} <span class="pull-right">{{ newData.date | date: 'MMM dd'}}</span></span>
+            </md-card-title-text>
+            </md-card-title>
+            </md-card>
+          </div> 
+        </md-list-item>            
+      </md-list>
+    </md-content>
+    <md-divider></md-divider>
+  </div>
+
+</div>
